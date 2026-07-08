@@ -11,11 +11,14 @@
 <link rel="stylesheet" href="assets/site.css">
 <style>
 /* ===== BLOG LISTING ===== */
-.blog-hero{padding:74px 0 46px;text-align:center;background:var(--white);position:relative}
+.blog-hero{min-height:calc(100vh - 124px);display:flex;align-items:center;justify-content:center;padding:66px 0;text-align:center;position:relative;overflow:hidden;isolation:isolate;background:var(--navy)}
+.blog-hero::before{content:"";position:absolute;inset:0;z-index:0;background:url("assets/hero.jpg") center 38%/cover no-repeat}
+.blog-hero::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(62% 70% at 50% 40%,rgba(15,34,45,.82) 0%,rgba(15,34,45,.66) 55%,rgba(15,34,45,.4) 100%),linear-gradient(180deg,rgba(15,34,45,.55) 0%,rgba(15,34,45,.25) 30%,rgba(15,34,45,.72) 100%)}
+.blog-hero .container{position:relative;z-index:2}
 .blog-hero .feather{width:38px;margin:0 auto 18px;opacity:.92}
-.blog-hero h1{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.04;margin:14px 0 20px}
-.blog-hero h1 .accent{color:var(--teal-deep);font-style:italic}
-.blog-hero p{max-width:600px;margin:0 auto;color:var(--ink-soft);font-size:1.12rem;font-weight:300}
+.blog-hero h1{font-family:var(--serif);font-weight:600;color:var(--white);font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.04;margin:14px 0 20px}
+.blog-hero h1 .accent{color:var(--gold-soft);font-style:italic}
+.blog-hero p{max-width:600px;margin:0 auto;color:rgba(255,255,255,.84);font-size:1.12rem;font-weight:300}
 .blog-wrap{padding:64px 0 40px}
 
 /* Featured */
@@ -154,8 +157,8 @@
 <!-- BLOG HEADER -->
 <header class="blog-hero">
   <div class="container">
-    <img src="assets/feather_icon.png" class="feather reveal" alt="">
-    <span class="eyebrow center reveal">The Blog</span>
+    <img src="assets/feather_white.png" class="feather reveal" alt="">
+    <span class="eyebrow center light reveal">The Blog</span>
     <h1 class="reveal d1">Notes on calm, clarity &amp;<br><span class="accent">intentional living.</span></h1>
     <p class="reveal d2">Practical tips and gentle inspiration on decluttering, organizing, downsizing, and the energy-shifting power of Feng Shui — straight from Kalen.</p>
   </div>
