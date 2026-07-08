@@ -1054,6 +1054,170 @@
         transform: translateX(6px);
       }
 
+      /* ============ TESTIMONIALS ============ */
+      .praise {
+        position: relative;
+        padding: 78px 0 84px;
+        background: var(--navy);
+        color: var(--cream);
+        overflow: hidden;
+        isolation: isolate;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .praise::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          radial-gradient(
+            60% 60% at 82% 8%,
+            rgba(46, 147, 166, 0.16) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            50% 55% at 12% 92%,
+            rgba(194, 161, 90, 0.12) 0%,
+            transparent 62%
+          );
+        pointer-events: none;
+      }
+      .praise .container {
+        position: relative;
+        z-index: 2;
+      }
+      .praise-head {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 20px;
+      }
+      .praise-head .eyebrow {
+        color: var(--gold-soft);
+      }
+      .praise-head .eyebrow::before,
+      .praise-head .eyebrow::after {
+        background: var(--gold-soft);
+      }
+      .praise-head h2 {
+        margin-top: 18px;
+        color: #fff;
+      }
+      .praise-head h2 .accent {
+        color: var(--gold-soft);
+        font-style: italic;
+      }
+      .rating-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin: 26px auto 58px;
+        padding: 11px 22px;
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(6px);
+      }
+      .rating-badge .rb-stars {
+        color: var(--gold-soft);
+        letter-spacing: 2px;
+        font-size: 15px;
+      }
+      .rating-badge .rb-text {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.82);
+        letter-spacing: 0.02em;
+      }
+      .rating-badge .rb-text b {
+        color: #fff;
+        font-weight: 500;
+      }
+      .praise-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      .praise-grid .t-card:first-child {
+        grid-column: span 2;
+      }
+      .t-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.045);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 16px;
+        padding: 38px 36px 32px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.45s var(--ease);
+      }
+      .t-card::before {
+        content: "\201C";
+        position: absolute;
+        top: 6px;
+        left: 26px;
+        font-family: var(--serif);
+        font-size: 5.6rem;
+        line-height: 1;
+        color: rgba(216, 190, 134, 0.28);
+      }
+      .t-card:hover {
+        transform: translateY(-6px);
+        background: rgba(255, 255, 255, 0.07);
+        border-color: rgba(216, 190, 134, 0.32);
+      }
+      .t-stars {
+        position: relative;
+        z-index: 1;
+        color: var(--gold-soft);
+        letter-spacing: 2px;
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+      .t-quote {
+        position: relative;
+        z-index: 1;
+        font-family: var(--serif);
+        font-size: 1.28rem;
+        line-height: 1.5;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.92);
+        margin-bottom: 26px;
+        flex: 1;
+      }
+      .praise-grid .t-card:first-child .t-quote {
+        font-size: 1.4rem;
+      }
+      .t-who {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .t-avatar {
+        flex: 0 0 46px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--serif);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--navy);
+        background: linear-gradient(140deg, var(--gold-soft), var(--gold));
+      }
+      .t-name {
+        font-family: var(--sans);
+        font-weight: 500;
+        font-size: 0.96rem;
+        color: #fff;
+        line-height: 1.3;
+      }
+      .t-role {
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        color: var(--steel-soft);
+      }
+
       /* ============ CONTACT ============ */
       .contact {
         padding: 60px 0;
@@ -1411,6 +1575,12 @@
           max-width: 440px;
           margin: 0 auto;
         }
+        .praise-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .praise-grid .t-card:first-child {
+          grid-column: span 2;
+        }
         .footer-top {
           grid-template-columns: 1fr 1fr;
           gap: 40px;
@@ -1457,6 +1627,14 @@
         .hero-cta .btn {
           width: 100%;
           justify-content: center;
+        }
+        .praise-grid {
+          grid-template-columns: 1fr;
+          max-width: 440px;
+          margin: 0 auto;
+        }
+        .praise-grid .t-card:first-child {
+          grid-column: auto;
         }
         .divider-orn span {
           width: 44px;
@@ -1849,6 +2027,102 @@
               <a href="#contact" class="card-link"
                 >Start Here <span class="ar">→</span></a
               >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="praise" id="testimonials">
+      <div class="container">
+        <div class="praise-head">
+          <span class="eyebrow center reveal">Kind Words</span>
+          <h2 class="s-title reveal">
+            Homes transformed, <span class="accent">lives lightened.</span>
+          </h2>
+        </div>
+        <div class="rating-badge reveal d1">
+          <span class="rb-stars">★★★★★</span>
+          <span class="rb-text"><b>5.0</b> rating on Google Reviews</span>
+        </div>
+
+        <div class="praise-grid">
+          <article class="t-card reveal">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">
+              Because clutter didn't stand a chance. Kalen took the chaos hiding
+              in our closets, corners, and those "I'll-deal-with-it-later" piles
+              and transformed it into a space that truly works for us. Every room
+              feels lighter, moves more smoothly, and makes us want to exhale the
+              moment we walk in.
+            </p>
+            <div class="t-who">
+              <span class="t-avatar">SC</span>
+              <div>
+                <div class="t-name">Sandra Collins</div>
+                <div class="t-role">Verified Google Review</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="t-card reveal d1">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">
+              The Compass Connection approach changed how our whole home feels.
+              There's a calm and balance now that I didn't know was possible.
+            </p>
+            <div class="t-who">
+              <span class="t-avatar">MR</span>
+              <div>
+                <div class="t-name">Marcus Reed</div>
+                <div class="t-role">Homeowner</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="t-card reveal d1">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">
+              Downsizing felt overwhelming until Kalen stepped in. She made every
+              decision easy and left our new place feeling like home from day one.
+            </p>
+            <div class="t-who">
+              <span class="t-avatar">PH</span>
+              <div>
+                <div class="t-name">Priya &amp; Tom Hale</div>
+                <div class="t-role">Recent Move</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="t-card reveal d2">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">
+              Professional, intuitive, and genuinely kind. My office went from a
+              source of stress to the most peaceful room in the house.
+            </p>
+            <div class="t-who">
+              <span class="t-avatar">JL</span>
+              <div>
+                <div class="t-name">Jenna Lowe</div>
+                <div class="t-role">Small Business Owner</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="t-card reveal d2">
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">
+              A true fresh start. Kalen listens, then delivers a space that feels
+              like the best version of you. I recommend her to everyone.
+            </p>
+            <div class="t-who">
+              <span class="t-avatar">DW</span>
+              <div>
+                <div class="t-name">David Whitman</div>
+                <div class="t-role">Homeowner</div>
+              </div>
             </div>
           </article>
         </div>
