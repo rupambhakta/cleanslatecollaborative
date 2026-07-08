@@ -457,115 +457,167 @@
         border-radius: 2px;
       }
 
-      /* ============ HERO ============ */
-      .hero {
+      /* ============ HERO — Settling (photo background) ============ */
+      .settle-hero {
         position: relative;
         min-height: calc(100vh - 124px);
         display: flex;
         align-items: center;
+        justify-content: center;
         overflow: hidden;
         isolation: isolate;
+        background: var(--navy);
       }
-      .hero .container {
-        max-width: 1340px;
-        width: 100%;
-      }
-      .hero-bg {
+      .settle-bg {
         position: absolute;
         inset: 0;
+        z-index: 0;
         background: url("assets/hero.jpg") center 38% / cover no-repeat;
-        z-index: -2;
-        animation: kenburns 22s ease-in-out infinite alternate;
+        animation: settleKenBurns 22s ease-in-out infinite alternate;
+        will-change: transform;
       }
-      @keyframes kenburns {
+      @keyframes settleKenBurns {
         from {
           transform: scale(1.02);
         }
         to {
-          transform: scale(1.14);
+          transform: scale(1.13);
         }
       }
-      .hero-overlay {
+      .settle-overlay {
         position: absolute;
         inset: 0;
-        z-index: -1;
-        background: linear-gradient(
-          100deg,
-          rgba(15, 34, 45, 0.93) 0%,
-          rgba(16, 38, 50, 0.78) 42%,
-          rgba(20, 44, 58, 0.35) 78%,
-          rgba(20, 44, 58, 0.15) 100%
-        );
+        z-index: 1;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            62% 56% at 50% 44%,
+            rgba(15, 34, 45, 0.86) 0%,
+            rgba(16, 38, 50, 0.6) 55%,
+            rgba(16, 38, 50, 0.3) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(15, 34, 45, 0.6) 0%,
+            rgba(15, 34, 45, 0.22) 26%,
+            rgba(15, 34, 45, 0.42) 70%,
+            rgba(11, 26, 35, 0.86) 100%
+          );
       }
-      .hero-inner {
-        max-width: 960px;
-        padding: 40px 0;
-        color: var(--cream);
+      .settle-feather {
+        position: absolute;
+        right: -8%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: clamp(280px, 34vw, 560px);
+        opacity: 0.07;
+        filter: blur(1px);
+        z-index: 2;
+        pointer-events: none;
+        mix-blend-mode: soft-light;
       }
-      .hero .eyebrow {
+      .settle-hero .container {
+        max-width: 1200px;
+        width: 100%;
+      }
+      .settle-inner {
+        position: relative;
+        z-index: 3;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 64px 0 56px;
+        text-align: center;
+      }
+      .settle-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        justify-content: center;
+        font-family: var(--sans);
+        font-size: 12.5px;
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
         color: var(--gold-soft);
-        font-size: 14px;
-        letter-spacing: 0.34em;
+        opacity: 0;
+        animation: settleFadeUp 0.9s var(--ease) 0.15s forwards;
       }
-      .hero .eyebrow::before {
+      .settle-line {
+        width: 38px;
+        height: 1px;
         background: var(--gold-soft);
-        width: 52px;
+        opacity: 0.65;
       }
-      .hero h1 {
+      .settle-title {
         font-family: var(--serif);
         font-weight: 500;
-        font-size: clamp(3rem, 6vw, 6.2rem);
-        line-height: 1;
-        letter-spacing: 0.01em;
-        margin: 30px 0 28px;
+        font-size: clamp(2.5rem, 5.4vw, 4.9rem);
+        line-height: 1.08;
+        letter-spacing: 0.005em;
         color: #fff;
+        margin: 28px 0 26px;
+        opacity: 0;
+        animation: settleFadeUp 1s var(--ease) 0.38s forwards;
       }
-      .hero h1 em {
+      .settle-title em {
+        display: block;
         font-style: italic;
         color: var(--gold-soft);
-        display: block;
+        margin-top: 6px;
       }
-      .hero-sub {
-        font-size: clamp(1.1rem, 1.35vw, 1.4rem);
+      .settle-sub {
+        font-family: var(--sans);
         font-weight: 300;
-        color: rgba(255, 255, 255, 0.92);
-        max-width: 680px;
-        line-height: 1.62;
-        margin-bottom: 48px;
+        font-size: clamp(1.02rem, 1.3vw, 1.22rem);
+        line-height: 1.68;
+        color: rgba(255, 255, 255, 0.84);
+        max-width: 600px;
+        margin: 0 auto 44px;
+        opacity: 0;
+        animation: settleFadeUp 1s var(--ease) 0.64s forwards;
       }
-      .hero-cta {
+      .settle-cta {
         display: flex;
         gap: 18px;
+        justify-content: center;
         flex-wrap: wrap;
+        opacity: 0;
+        animation: settleFadeUp 1s var(--ease) 0.9s forwards;
       }
-      .hero .btn {
-        padding: 20px 46px;
-        font-size: 13.5px;
+      .settle-hero .btn {
+        padding: 18px 40px;
+        font-size: 13px;
       }
-      .hero-scroll {
+      @keyframes settleFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .settle-scroll {
         position: absolute;
-        bottom: 34px;
         left: 50%;
+        bottom: 30px;
         transform: translateX(-50%);
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 11px;
-        letter-spacing: 0.25em;
-        text-transform: uppercase;
+        z-index: 3;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        gap: 12px;
-        z-index: 2;
+        opacity: 0;
+        animation: settleFadeUp 1s var(--ease) 1.15s forwards;
       }
-      .hero-scroll .line {
+      .settle-scroll-line {
         width: 1px;
-        height: 46px;
+        height: 38px;
         background: linear-gradient(var(--gold-soft), transparent);
-        animation: scrolldot 2.2s infinite;
+        animation: settleScrollPulse 2.4s infinite;
       }
-      @keyframes scrolldot {
+      @keyframes settleScrollPulse {
         0% {
-          opacity: 0.2;
+          opacity: 0.25;
           transform: scaleY(0.4);
           transform-origin: top;
         }
@@ -573,29 +625,80 @@
           opacity: 1;
         }
         100% {
-          opacity: 0.2;
+          opacity: 0.25;
           transform: scaleY(1);
           transform-origin: top;
         }
       }
-      .hero-badge {
-        position: absolute;
-        right: 5%;
-        bottom: 12%;
-        z-index: 2;
-        background: rgba(251, 248, 243, 0.1);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-radius: 14px;
-        padding: 22px 26px;
-        color: #fff;
-        max-width: 230px;
-        display: none;
+
+      @media (prefers-reduced-motion: reduce) {
+        .settle-bg {
+          animation: none;
+        }
+        .settle-scroll-line {
+          animation: none;
+        }
+        .settle-eyebrow,
+        .settle-title,
+        .settle-sub,
+        .settle-cta,
+        .settle-scroll {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .settle-feather {
+          width: 44vw;
+          opacity: 0.045;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .settle-inner {
+          padding: 48px 0 40px;
+        }
+        .settle-cta {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .settle-cta .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .settle-scroll {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .settle-feather {
+          display: none;
+        }
+        .settle-eyebrow {
+          letter-spacing: 0.24em;
+          font-size: 11px;
+        }
+        .settle-line {
+          width: 24px;
+        }
+        .settle-hero .btn {
+          padding: 16px 30px;
+        }
+      }
+
+      @media (max-height: 700px) and (max-width: 900px) {
+        .settle-hero {
+          min-height: auto;
+          padding: 100px 0 64px;
+        }
       }
 
       /* ============ WELCOME ============ */
       .welcome {
-        padding: 118px 0 90px;
+        padding: 59px 0 45px;
         text-align: center;
         position: relative;
         background: var(--cream);
@@ -652,7 +755,7 @@
 
       /* ============ FOUNDER (two-column) ============ */
       .founder {
-        padding: 40px 0 120px;
+        padding: 20px 0 60px;
         background: var(--cream);
       }
       .founder .grid {
@@ -763,7 +866,7 @@
       .redefine {
         background: var(--navy);
         color: var(--cream);
-        padding: 118px 0;
+        padding: 59px 0;
         position: relative;
         overflow: hidden;
         text-align: center;
@@ -825,7 +928,7 @@
 
       /* ============ WAYS / CARDS (three-column) ============ */
       .ways {
-        padding: 118px 0 120px;
+        padding: 59px 0 60px;
         background: var(--cream-2);
       }
       .ways-head {
@@ -949,7 +1052,7 @@
 
       /* ============ CONTACT ============ */
       .contact {
-        padding: 120px 0;
+        padding: 60px 0;
         background: var(--cream);
         position: relative;
       }
@@ -1108,11 +1211,37 @@
       }
       .footer-top {
         display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
-        gap: 48px;
+        grid-template-columns: 1.6fr 0.85fr 0.95fr 1fr 1.1fr;
+        gap: 40px;
         padding-bottom: 60px;
         position: relative;
         z-index: 2;
+      }
+      .footer-blog li {
+        margin-bottom: 16px;
+      }
+      .footer-blog li a {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .footer-blog li a::before {
+        display: none;
+      }
+      .footer-blog .fp-t {
+        font-size: 0.93rem;
+        color: var(--steel-soft);
+        transition: 0.3s;
+        line-height: 1.35;
+      }
+      .footer-blog li a:hover .fp-t {
+        color: #fff;
+      }
+      .footer-blog .fp-d {
+        font-size: 0.74rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--steel);
       }
       .footer-brand img {
         height: 76px;
@@ -1519,25 +1648,40 @@
     </div>
 
     <!-- ============ HERO ============ -->
-    <header class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
+    <header class="hero settle-hero" id="hero">
+      <div class="settle-bg" aria-hidden="true"></div>
+      <div class="settle-overlay" aria-hidden="true"></div>
+      <img
+        src="assets/feather_white.png"
+        class="settle-feather"
+        alt=""
+        aria-hidden="true"
+      />
       <div class="container">
-        <div class="hero-inner">
-          <span class="eyebrow">Clean Slate Collaborative</span>
-          <h1>Making space for <em>what matters.</em></h1>
-          <p class="hero-sub">
-            Clutter clearing, organizing, and Feng Shui that bring calm, flow,
-            and clarity home — so your space finally supports the life you want
-            to live.
+        <div class="settle-inner">
+          <span class="settle-eyebrow">
+            <span class="settle-line"></span>
+            Clean Slate Collaborative
+            <span class="settle-line"></span>
+          </span>
+          <h1 class="settle-title">
+            Let the clutter settle.
+            <em>Make space for what matters.</em>
+          </h1>
+          <p class="settle-sub">
+            Clutter clearing, organizing, and Feng Shui that bring calm,
+            flow, and clarity home — one gentle shift at a time.
           </p>
-          <div class="hero-cta">
+          <div class="settle-cta">
             <a href="#contact" class="btn btn-gold"
               >Book a Free Consultation <span class="ar">→</span></a
             >
             <a href="#approach" class="btn btn-ghost">Explore the Approach</a>
           </div>
         </div>
+      </div>
+      <div class="settle-scroll" aria-hidden="true">
+        <span class="settle-scroll-line"></span>
       </div>
     </header>
 
@@ -1873,9 +2017,9 @@
               <li><a href="#top">Home</a></li>
               <li><a href="#approach">Approach</a></li>
               <li><a href="#services">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="#founder">Kalen Ashley</a></li>
-              <li><a href="#">Log In</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -1887,6 +2031,15 @@
               <li><a href="#approach">Clean Slate Process</a></li>
               <li><a href="#approach">Compass Connection</a></li>
               <li><a href="#approach">Glossary</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-blog">
+            <h4>From the Blog</h4>
+            <ul>
+              <li><a href="blog-details.html"><span class="fp-t">The Clean Slate Process: Where Transformation Begins</span><span class="fp-d">Feng Shui</span></a></li>
+              <li><a href="blog-details.html"><span class="fp-t">5 Feng Shui Principles for a Calmer Room</span><span class="fp-d">Feng Shui</span></a></li>
+              <li><a href="blog-details.html"><span class="fp-t">Downsizing with Heart</span><span class="fp-d">Downsizing</span></a></li>
+              <li><a href="blog.html"><span class="fp-t" style="color: var(--gold-soft)">View all posts →</span></a></li>
             </ul>
           </div>
           <div class="footer-col footer-contact">
