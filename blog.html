@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Clean Slate Collaborative</title>
+<meta name="description" content="Notes on calm, clarity, and intentional living — decluttering, organizing, downsizing, and Feng Shui insights from Clean Slate Collaborative.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ===== BLOG LISTING ===== */
+.blog-hero{padding:74px 0 46px;text-align:center;background:linear-gradient(180deg,var(--cream),var(--cream-2));position:relative}
+.blog-hero .feather{width:38px;margin:0 auto 18px;opacity:.92}
+.blog-hero h1{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.04;margin:14px 0 20px}
+.blog-hero h1 .accent{color:var(--teal-deep);font-style:italic}
+.blog-hero p{max-width:600px;margin:0 auto;color:var(--ink-soft);font-size:1.12rem;font-weight:300}
+.blog-wrap{padding:64px 0 40px}
+
+/* Featured */
+.featured{display:grid;grid-template-columns:1.15fr 1fr;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:74px;border:1px solid rgba(22,48,63,.05)}
+.featured .f-img{position:relative;overflow:hidden;min-height:430px}
+.featured .f-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .9s var(--ease)}
+.featured:hover .f-img img{transform:scale(1.05)}
+.featured .f-tag{position:absolute;top:22px;left:22px;z-index:2;background:var(--gold);color:var(--navy);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border-radius:30px}
+.featured .f-body{padding:54px 52px;display:flex;flex-direction:column;justify-content:center}
+.cat{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep);font-weight:600;margin-bottom:16px}
+.featured h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3vw,2.7rem);line-height:1.08;color:var(--navy);margin-bottom:18px}
+.featured h2 a:hover{color:var(--teal-deep)}
+.featured p{color:var(--ink-soft);margin-bottom:26px;font-size:1.03rem;font-weight:300}
+.post-meta{display:flex;align-items:center;gap:14px;font-size:.82rem;color:var(--steel);letter-spacing:.03em;margin-bottom:28px}
+.post-meta .who{display:flex;align-items:center;gap:10px}
+.post-meta .who img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:top}
+.post-meta .who b{color:var(--navy);font-weight:500}
+.post-meta .dot{width:4px;height:4px;border-radius:50%;background:var(--steel-soft)}
+.read-link{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;align-items:center;gap:10px;align-self:flex-start}
+.read-link .ar{transition:transform .35s var(--ease)}
+.read-link:hover .ar{transform:translateX(6px)}
+
+/* Filter row */
+.filter-row{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:42px;flex-wrap:wrap}
+.filter-row h3{font-family:var(--serif);font-size:1.8rem;color:var(--navy);font-weight:600}
+.pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);background:#fff;border:1px solid rgba(22,48,63,.14);padding:10px 20px;border-radius:30px;cursor:pointer;transition:.3s}
+.pill:hover{border-color:var(--teal);color:var(--teal-deep)}
+.pill.active{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+
+/* Post grid */
+.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.post-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .5s var(--ease),box-shadow .5s var(--ease);display:flex;flex-direction:column;border:1px solid rgba(22,48,63,.05)}
+.post-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
+.post-card .pc-img{position:relative;overflow:hidden;aspect-ratio:3/2}
+.post-card .pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.post-card:hover .pc-img img{transform:scale(1.08)}
+.pc-cat{position:absolute;top:14px;left:14px;background:rgba(22,48,63,.82);backdrop-filter:blur(4px);color:var(--gold-soft);font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;padding:7px 13px;border-radius:20px}
+.pc-body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
+.pc-date{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:12px}
+.post-card h3{font-family:var(--serif);font-weight:600;font-size:1.42rem;line-height:1.2;color:var(--navy);margin-bottom:12px}
+.post-card h3 a:hover{color:var(--teal-deep)}
+.post-card .pc-ex{font-size:.92rem;color:var(--ink-soft);flex:1;margin-bottom:18px;font-weight:300}
+.post-card .read-link{font-size:11px}
+.post-card.hide{display:none}
+
+/* Newsletter */
+.newsletter{background:var(--navy);border-radius:20px;padding:66px 60px;text-align:center;margin:82px 0 20px;position:relative;overflow:hidden}
+.newsletter .feather-water{position:absolute;right:-20px;top:50%;transform:translateY(-50%);height:135%;opacity:.06}
+.newsletter .eyebrow{justify-content:center;color:var(--gold-soft)}
+.newsletter .eyebrow::before,.newsletter .eyebrow::after{background:var(--gold-soft)}
+.newsletter h2{font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(1.9rem,3vw,2.6rem);margin:16px 0 14px;position:relative;z-index:2}
+.newsletter p{color:rgba(240,244,246,.82);max-width:520px;margin:0 auto 32px;position:relative;z-index:2;font-weight:300}
+.nl-form{display:flex;gap:12px;max-width:520px;margin:0 auto;position:relative;z-index:2}
+.nl-form input{flex:1;font-family:var(--sans);font-size:.95rem;font-weight:300;padding:16px 24px;border-radius:40px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;outline:none;transition:.3s}
+.nl-form input::placeholder{color:rgba(255,255,255,.55)}
+.nl-form input:focus{border-color:var(--gold-soft);background:rgba(255,255,255,.14)}
+
+/* Pagination */
+.pagination{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:64px}
+.pagination a{min-width:46px;height:46px;padding:0 6px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.92rem;color:var(--navy);border:1px solid rgba(22,48,63,.14);transition:.3s;font-weight:500}
+.pagination a:hover,.pagination a.active{background:var(--navy);color:var(--cream);border-color:var(--navy)}
+.pagination a.arrow{width:auto;padding:0 24px;border-radius:30px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+@media(max-width:900px){.featured{grid-template-columns:1fr}.featured .f-img{min-height:300px}.post-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.post-grid{grid-template-columns:1fr}.featured .f-body{padding:36px 28px}.newsletter{padding:48px 24px}.nl-form{flex-direction:column}}
+</style>
+</head>
+<body id="top">
+
+<!-- TOP UTILITY BAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-left"><span class="dot">✦</span> By appointment · Complimentary 30-minute consultation</div>
+    <div class="tb-right">
+      <a class="tb-email" href="mailto:hello@cleanslatecollaborative.com"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.5l8 5 8-5V6H4zm16 3-8 5-8-5v9h16V9z"/></svg> hello@cleanslatecollaborative.com</a>
+      <div class="tb-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1 0 1.7.2 2.3.4.6.3 1.1.6 1.6 1.1.5.5.8 1 1.1 1.6.2.6.4 1.3.4 2.3.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.7-.4 2.3-.3.6-.6 1.1-1.1 1.6-.5.5-1 .8-1.6 1.1-.6.2-1.3.4-2.3.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.7-.2-2.3-.4-.6-.3-1.1-.6-1.6-1.1-.5-.5-.8-1-1.1-1.6-.2-.6-.4-1.3-.4-2.3C2 15 2 14.7 2 12s0-3 .1-4.1c0-1 .2-1.7.4-2.3.3-.6.6-1.1 1.1-1.6.5-.5 1-.8 1.6-1.1.6-.2 1.3-.4 2.3-.4C9 2 9.3 2 12 2zm0 3.9a6.1 6.1 0 1 0 0 12.2 6.1 6.1 0 0 0 0-12.2zm0 1.8a4.3 4.3 0 1 1 0 8.6 4.3 4.3 0 0 1 0-8.6zm6.3-2.2a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.9-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.2-.9 3.5-.2 1 .5 1.9 1.6 1.9 1.9 0 3.2-2.4 3.2-5.3 0-2.2-1.5-3.8-4.2-3.8a4.7 4.7 0 0 0-4.9 4.7c0 .9.3 1.5.7 2 .2.2.2.3.1.5l-.2.9c-.1.3-.3.4-.6.2-1.2-.5-1.8-1.9-1.8-3.5 0-2.6 2.2-5.7 6.5-5.7 3.5 0 5.8 2.5 5.8 5.2 0 3.5-2 6.2-4.9 6.2-1 0-1.9-.5-2.2-1.1l-.6 2.4c-.2.8-.7 1.7-1 2.3A10 10 0 1 0 12 2z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="assets/logo_color.png" alt="Clean Slate Collaborative"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dd"><a href="index.html#approach">Approach <i class="caret"></i></a>
+        <div class="dropdown">
+          <div class="dd-title">The Approach</div>
+          <a href="index.html#approach"><i class="di"></i>Clean Slate Process</a>
+          <a href="index.html#approach"><i class="di"></i>Compass Connection</a>
+          <a href="index.html#approach"><i class="di"></i>Glossary</a>
+        </div>
+      </li>
+      <li class="has-dd"><a href="index.html#services">Services <i class="caret"></i></a>
+        <div class="dropdown">
+          <div class="dd-title">Services</div>
+          <a href="index.html#services"><i class="di"></i>Daily Living</a>
+          <a href="index.html#services"><i class="di"></i>Personal Spaces</a>
+          <a href="index.html#services"><i class="di"></i>Storage</a>
+        </div>
+      </li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#founder">Kalen Ashley</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#" class="nav-login"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> Log In</a>
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Book Consultation</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-head">
+    <img src="assets/logo_white.png" alt="Clean Slate Collaborative">
+    <button class="mm-close" id="mmClose">&times;</button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="index.html#approach">Approach</a>
+  <a class="mm-sub" href="index.html#approach">Clean Slate Process · Compass Connection · Glossary</a>
+  <a href="index.html#services">Services</a>
+  <a class="mm-sub" href="index.html#services">Daily Living · Personal Spaces · Storage</a>
+  <a href="blog.html">Blog</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#founder">Kalen Ashley</a>
+  <a href="index.html#contact" style="color:var(--gold-soft)">Book a Consultation →</a>
+</div>
+
+<!-- BLOG HEADER -->
+<header class="blog-hero">
+  <div class="container">
+    <img src="assets/feather_icon.png" class="feather reveal" alt="">
+    <span class="eyebrow center reveal">The Blog</span>
+    <h1 class="reveal d1">Notes on calm, clarity &amp;<br><span class="accent">intentional living.</span></h1>
+    <p class="reveal d2">Practical tips and gentle inspiration on decluttering, organizing, downsizing, and the energy-shifting power of Feng Shui — straight from Kalen.</p>
+  </div>
+</header>
+
+<div class="blog-wrap">
+  <div class="container">
+
+    <!-- FEATURED POST -->
+    <article class="featured reveal">
+      <div class="f-img">
+        <span class="f-tag">★ Featured</span>
+        <img src="assets/hero.jpg" alt="A calm, transformed living space">
+      </div>
+      <div class="f-body">
+        <div class="cat">Feng Shui &amp; Approach</div>
+        <h2><a href="blog-details.html">The Clean Slate Process: Where Every Transformation Begins</a></h2>
+        <p>Before a single item is moved, real change starts with intention. Here's how the Clean Slate Process turns an overwhelming home into a space that finally breathes with you — one grounded, energy-aware step at a time.</p>
+        <div class="post-meta">
+          <span class="who"><img src="assets/founder.jpg" alt="Kalen Ashley"><b>Kalen Ashley</b></span>
+          <span class="dot"></span><span>June 24, 2026</span>
+          <span class="dot"></span><span>6 min read</span>
+        </div>
+        <a href="blog-details.html" class="read-link">Read Article <span class="ar">→</span></a>
+      </div>
+    </article>
+
+    <!-- FILTER -->
+    <div class="filter-row">
+      <h3>Latest Articles</h3>
+      <div class="pills" id="pills">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="feng-shui">Feng Shui</button>
+        <button class="pill" data-filter="organizing">Organizing</button>
+        <button class="pill" data-filter="downsizing">Downsizing</button>
+        <button class="pill" data-filter="seasonal">Seasonal</button>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="post-grid" id="grid">
+      <article class="post-card reveal" data-category="organizing">
+        <div class="pc-img"><span class="pc-cat">Organizing</span><img src="assets/card-organize.jpg" alt="Organized closet by color"></div>
+        <div class="pc-body">
+          <div class="pc-date">May 30, 2026 · 5 min</div>
+          <h3><a href="blog-details.html">Closet Clarity: Organize by Color, Season &amp; Soul</a></h3>
+          <p class="pc-ex">A calm closet isn't about more bins — it's about a system that mirrors how you actually live and dress.</p>
+          <a href="blog-details.html" class="read-link">Read More <span class="ar">→</span></a>
+        </div>
+      </article>
+
+      <article class="post-card reveal d1" data-category="feng-shui">
+        <div class="pc-img"><span class="pc-cat">Feng Shui</span><img src="assets/card-consult.jpg" alt="Meaningful entry table"></div>
+        <div class="pc-body">
+          <div class="pc-date">May 12, 2026 · 4 min</div>
+          <h3><a href="blog-details.html">5 Feng Shui Principles to Bring Calm Into Any Room</a></h3>
+          <p class="pc-ex">Simple, no-renovation shifts in flow, light, and placement that instantly change how a room feels.</p>
+          <a href="blog-details.html" class="read-link">Read More <span class="ar">→</span></a>
+        </div>
+      </article>
+
+      <article class="post-card reveal d2" data-category="downsizing">
+        <div class="pc-img"><span class="pc-cat">Downsizing</span><img src="assets/g-storage.jpg" alt="Downsizing and sorting belongings"></div>
+        <div class="pc-body">
+          <div class="pc-date">Apr 28, 2026 · 7 min</div>
+          <h3><a href="blog-details.html">Downsizing with Heart: Letting Go Without the Overwhelm</a></h3>
+          <p class="pc-ex">A compassionate, step-by-step way to release decades of belongings while honoring the memories that matter.</p>
+          <a href="blog-details.html" class="read-link">Read More <span class="ar">→</span></a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-category="organizing">
+        <div class="pc-img"><span class="pc-cat">Organizing</span><img src="assets/g-pantry.jpg" alt="Organized pantry"></div>
+        <div class="pc-body">
+          <div class="pc-date">Apr 9, 2026 · 5 min</div>
+          <h3><a href="blog-details.html">The Pantry Reset That Changes How You Cook</a></h3>
+          <p class="pc-ex">Reorganize what you already own into zones that make weeknight dinners feel effortless again.</p>
+          <a href="blog-details.html" class="read-link">Read More <span class="ar">→</span></a>
+        </div>
+      </article>
+
+      <article class="post-card reveal d1" data-category="seasonal">
+        <div class="pc-img"><span class="pc-cat">Seasonal</span><img src="assets/g-closet2.jpg" alt="Seasonal storage bins"></div>
+        <div class="pc-body">
+          <div class="pc-date">Mar 20, 2026 · 6 min</div>
+          <h3><a href="blog-details.html">Seasonal Storage, Simplified: Holidays Without the Chaos</a></h3>
+          <p class="pc-ex">Label, contain, and rotate your seasonal décor so next year's setup and teardown take half the time.</p>
+          <a href="blog-details.html" class="read-link">Read More <span class="ar">→</span></a>
+        </div>
+      </article>
+
+      <article class="post-card reveal d2" data-category="feng-shui">
+        <div class="pc-img"><span class="pc-cat">Feng Shui</span><img src="assets/g-porch.jpg" alt="Welcoming entryway"></div>
+        <div class="pc-body">
+          <div class="pc-date">Mar 3, 2026 · 4 min</div>
+          <h3><a href="blog-details.html">Your Entryway Sets the Tone — Here's How to Make It Count</a></h3>
+          <p class="pc-ex">The first three feet of your home shape every arrival. A few intentional touches change everything.</p>
+          <a href="blog-details.html" class="read-link">Read More <span class="ar">→</span></a>
+        </div>
+      </article>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#" class="arrow">Next →</a>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter reveal">
+      <img src="assets/feather_white.png" class="feather-water" alt="">
+      <span class="eyebrow center">Stay Connected</span>
+      <h2>Calm-home inspiration, in your inbox.</h2>
+      <p>Join the Clean Slate list for seasonal tips, gentle decluttering prompts, and Feng Shui ideas — no clutter, promise.</p>
+      <form class="nl-form" onsubmit="return nlSubmit(event)">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit" class="btn btn-gold">Subscribe <span class="ar">→</span></button>
+      </form>
+    </section>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/feather_white.png" class="footer-water" alt="">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo_white.png" alt="Clean Slate Collaborative">
+        <div class="fmini">Making space for what matters.</div>
+        <p>Heart-led clutter clearing, intentional organizing, and Feng Shui — helping families create homes that feel light, clear, and alive.</p>
+        <div class="f-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1 0 1.7.2 2.3.4.6.3 1.1.6 1.6 1.1.5.5.8 1 1.1 1.6.2.6.4 1.3.4 2.3.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.7-.4 2.3-.3.6-.6 1.1-1.1 1.6-.5.5-1 .8-1.6 1.1-.6.2-1.3.4-2.3.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.7-.2-2.3-.4-.6-.3-1.1-.6-1.6-1.1-.5-.5-.8-1-1.1-1.6-.2-.6-.4-1.3-.4-2.3C2 15 2 14.7 2 12s0-3 .1-4.1c0-1 .2-1.7.4-2.3.3-.6.6-1.1 1.1-1.6.5-.5 1-.8 1.6-1.1.6-.2 1.3-.4 2.3-.4C9 2 9.3 2 12 2zm0 3.9a6.1 6.1 0 1 0 0 12.2 6.1 6.1 0 0 0 0-12.2zm0 1.8a4.3 4.3 0 1 1 0 8.6 4.3 4.3 0 0 1 0-8.6zm6.3-2.2a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.9-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.2-.9 3.5-.2 1 .5 1.9 1.6 1.9 1.9 0 3.2-2.4 3.2-5.3 0-2.2-1.5-3.8-4.2-3.8a4.7 4.7 0 0 0-4.9 4.7c0 .9.3 1.5.7 2 .2.2.2.3.1.5l-.2.9c-.1.3-.3.4-.6.2-1.2-.5-1.8-1.9-1.8-3.5 0-2.6 2.2-5.7 6.5-5.7 3.5 0 5.8 2.5 5.8 5.2 0 3.5-2 6.2-4.9 6.2-1 0-1.9-.5-2.2-1.1l-.6 2.4c-.2.8-.7 1.7-1 2.3A10 10 0 1 0 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#approach">Approach</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#founder">Kalen Ashley</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>What I Offer</h4>
+        <ul>
+          <li><a href="index.html#services">Daily Living</a></li>
+          <li><a href="index.html#services">Personal Spaces</a></li>
+          <li><a href="index.html#services">Storage</a></li>
+          <li><a href="index.html#approach">Clean Slate Process</a></li>
+          <li><a href="index.html#approach">Compass Connection</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-blog">
+        <h4>From the Blog</h4>
+        <ul>
+          <li><a href="blog-details.html"><span class="fp-t">The Clean Slate Process: Where Transformation Begins</span><span class="fp-d">Feng Shui</span></a></li>
+          <li><a href="blog-details.html"><span class="fp-t">5 Feng Shui Principles for a Calmer Room</span><span class="fp-d">Feng Shui</span></a></li>
+          <li><a href="blog-details.html"><span class="fp-t">Downsizing with Heart</span><span class="fp-d">Downsizing</span></a></li>
+          <li><a href="blog.html"><span class="fp-t" style="color:var(--gold-soft)">View all posts →</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Get in Touch</h4>
+        <div class="fc-line"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2z"/><path d="m2 6 10 7 10-7"/></svg> hello@cleanslatecollaborative.com</div>
+        <div class="fc-line"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Serving your local area &amp; beyond</div>
+        <div class="fc-line"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> By appointment</div>
+        <a href="index.html#contact" class="btn btn-gold">Book a Consultation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copy">© <span id="yr">2026</span> Clean Slate Collaborative · Design by <a href="#">Rising Royal Designs</a></div>
+      <div class="fb-tag">Clutter Clearing · Organizing · Feng Shui</div>
+      <div class="fb-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+const mm=document.getElementById('mobileMenu');
+document.getElementById('hamburger').onclick=()=>{mm.style.display='flex';requestAnimationFrame(()=>mm.classList.add('open'))};
+document.getElementById('mmClose').onclick=closeMM;
+function closeMM(){mm.classList.remove('open');setTimeout(()=>mm.style.display='none',450)}
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMM));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('yr').textContent=new Date().getFullYear();
+// Category filter
+const pills=document.querySelectorAll('.pill'),cards=document.querySelectorAll('.post-card');
+pills.forEach(p=>p.onclick=()=>{
+  pills.forEach(x=>x.classList.remove('active'));p.classList.add('active');
+  const f=p.dataset.filter;
+  cards.forEach(c=>{const show=f==='all'||c.dataset.category===f;c.classList.toggle('hide',!show)});
+});
+function nlSubmit(e){e.preventDefault();const b=e.target.querySelector('button');b.innerHTML='Subscribed ✦';setTimeout(()=>{e.target.reset();b.innerHTML='Subscribe <span class="ar">→</span>'},2400);return false}
+</script>
+</body>
+</html>
