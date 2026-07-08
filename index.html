@@ -193,10 +193,11 @@
 
       /* ============ TOP UTILITY BAR ============ */
       .topbar {
-        background: var(--navy);
-        color: var(--steel-soft);
+        background: var(--white);
+        color: var(--ink-soft);
         font-size: 12.5px;
         letter-spacing: 0.04em;
+        border-bottom: 1px solid rgba(22, 48, 63, 0.08);
       }
       .topbar .container {
         display: flex;
@@ -219,11 +220,11 @@
         gap: 22px;
       }
       .topbar a {
-        color: var(--steel-soft);
+        color: var(--ink-soft);
         transition: 0.3s;
       }
       .topbar a:hover {
-        color: #fff;
+        color: var(--navy);
       }
       .tb-social {
         display: flex;
@@ -251,14 +252,14 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(251, 248, 243, 0.82);
+        background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
         border-bottom: 1px solid rgba(22, 48, 63, 0.08);
         transition: 0.4s var(--ease);
       }
       .nav.scrolled {
-        background: rgba(251, 248, 243, 0.97);
+        background: rgba(255, 255, 255, 0.97);
         box-shadow: 0 10px 30px rgba(22, 48, 63, 0.09);
       }
       .nav .container {
@@ -756,7 +757,7 @@
       /* ============ FOUNDER (two-column) ============ */
       .founder {
         padding: 20px 0 60px;
-        background: var(--cream);
+        background: var(--white);
       }
       .founder .grid {
         display: grid;
@@ -864,12 +865,14 @@
 
       /* ============ REDEFINING (navy statement band) ============ */
       .redefine {
-        background: var(--navy);
-        color: var(--cream);
+        background: var(--white);
+        color: var(--ink);
         padding: 59px 0;
         position: relative;
         overflow: hidden;
         text-align: center;
+        border-top: 1px solid rgba(22, 48, 63, 0.07);
+        border-bottom: 1px solid rgba(22, 48, 63, 0.07);
       }
       .redefine .feather-water {
         position: absolute;
@@ -890,12 +893,12 @@
         max-width: 960px;
       }
       .redefine .eyebrow {
-        color: var(--gold-soft);
+        color: var(--gold);
         justify-content: center;
       }
       .redefine .eyebrow::before,
       .redefine .eyebrow::after {
-        background: var(--gold-soft);
+        background: var(--gold);
       }
       .redefine h2 {
         font-family: var(--serif);
@@ -903,10 +906,10 @@
         font-size: clamp(1.9rem, 3.6vw, 2.85rem);
         line-height: 1.16;
         margin: 22px 0 34px;
-        color: #fff;
+        color: var(--navy);
       }
       .redefine p {
-        color: rgba(240, 244, 246, 0.82);
+        color: var(--ink-soft);
         font-size: 1.1rem;
         font-weight: 300;
         max-width: 800px;
@@ -917,7 +920,7 @@
         font-family: var(--serif);
         font-style: italic;
         font-size: clamp(1.6rem, 3vw, 2.3rem);
-        color: var(--gold-soft);
+        color: var(--teal-deep);
         line-height: 1.35;
         margin: 44px auto 10px;
         max-width: 760px;
@@ -929,7 +932,8 @@
       /* ============ WAYS / CARDS (three-column) ============ */
       .ways {
         padding: 59px 0 60px;
-        background: var(--cream-2);
+        background: var(--white);
+        border-bottom: 1px solid rgba(22, 48, 63, 0.07);
       }
       .ways-head {
         text-align: center;
@@ -1053,7 +1057,7 @@
       /* ============ CONTACT ============ */
       .contact {
         padding: 60px 0;
-        background: var(--cream);
+        background: var(--white);
         position: relative;
       }
       .contact .grid {
@@ -1196,11 +1200,12 @@
 
       /* ============ FOOTER ============ */
       footer {
-        background: var(--navy);
-        color: var(--steel-soft);
+        background: var(--white);
+        color: var(--ink-soft);
         padding: 82px 0 0;
         position: relative;
         overflow: hidden;
+        border-top: 1px solid rgba(22, 48, 63, 0.08);
       }
       .footer-water {
         position: absolute;
@@ -1224,7 +1229,7 @@
       .footer-brand p {
         font-size: 0.95rem;
         font-weight: 300;
-        color: var(--steel-soft);
+        color: var(--ink-soft);
         line-height: 1.8;
         max-width: 320px;
         margin-bottom: 26px;
@@ -1233,7 +1238,7 @@
         font-family: var(--serif);
         font-style: italic;
         font-size: 1.25rem;
-        color: var(--gold-soft);
+        color: var(--teal-deep);
         margin-bottom: 22px;
       }
       .f-social {
@@ -1244,7 +1249,7 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        border: 1px solid rgba(159, 184, 196, 0.28);
+        border: 1px solid rgba(22, 48, 63, 0.16);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1253,7 +1258,7 @@
       .f-social a svg {
         width: 16px;
         height: 16px;
-        fill: var(--steel-soft);
+        fill: var(--steel);
         transition: 0.35s;
       }
       .f-social a:hover {
@@ -1269,7 +1274,7 @@
         font-size: 12px;
         letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: #fff;
+        color: var(--navy);
         font-weight: 600;
         margin-bottom: 22px;
         position: relative;
@@ -1293,7 +1298,7 @@
       .footer-col ul li a {
         font-size: 0.94rem;
         font-weight: 300;
-        color: var(--steel-soft);
+        color: var(--ink-soft);
         transition: 0.3s;
         display: inline-flex;
         align-items: center;
@@ -1307,7 +1312,7 @@
         transition: 0.3s;
       }
       .footer-col ul li a:hover {
-        color: #fff;
+        color: var(--navy);
       }
       .footer-col ul li a:hover::before {
         width: 14px;
@@ -1335,7 +1340,7 @@
         font-size: 11.5px;
       }
       .footer-bottom {
-        border-top: 1px solid rgba(159, 184, 196, 0.18);
+        border-top: 1px solid rgba(22, 48, 63, 0.1);
         padding: 26px 0;
         display: flex;
         justify-content: space-between;
@@ -1348,10 +1353,10 @@
       .footer-bottom .copy {
         font-size: 0.86rem;
         font-weight: 300;
-        color: var(--steel-soft);
+        color: var(--ink-soft);
       }
       .footer-bottom .copy a {
-        color: var(--gold-soft);
+        color: var(--gold);
       }
       .footer-bottom .fb-tag {
         font-size: 11px;
@@ -1365,7 +1370,7 @@
         font-size: 0.86rem;
       }
       .footer-bottom .fb-links a:hover {
-        color: #fff;
+        color: var(--navy);
       }
 
       /* ============ REVEAL ANIMATION ============ */
@@ -1462,13 +1467,14 @@
       .mobile-menu {
         position: fixed;
         inset: 0;
-        background: var(--navy);
+        background: var(--white);
         z-index: 200;
         padding: 32px;
         transform: translateX(100%);
         transition: 0.45s var(--ease);
         display: none;
         flex-direction: column;
+        box-shadow: var(--shadow-lg);
       }
       .mobile-menu.open {
         transform: translateX(0);
@@ -1480,31 +1486,31 @@
         margin-bottom: 40px;
       }
       .mm-head img {
-        height: 46px;
+        height: 92px;
       }
       .mm-close {
         background: none;
         border: none;
-        color: #fff;
+        color: var(--navy);
         font-size: 34px;
         cursor: pointer;
         line-height: 1;
       }
       .mobile-menu a {
-        color: var(--cream);
+        color: var(--navy);
         font-family: var(--serif);
         font-size: 1.7rem;
         padding: 14px 0;
-        border-bottom: 1px solid rgba(159, 184, 196, 0.15);
+        border-bottom: 1px solid rgba(22, 48, 63, 0.1);
         display: block;
       }
       .mobile-menu a:hover {
-        color: var(--gold-soft);
+        color: var(--teal-deep);
         padding-left: 8px;
       }
       .mm-sub {
         font-size: 1.05rem !important;
-        color: var(--steel-soft) !important;
+        color: var(--ink-soft) !important;
         font-family: var(--sans) !important;
         padding: 8px 0 8px 20px !important;
         border: none !important;
@@ -1520,13 +1526,13 @@
           consultation
         </div>
         <div class="tb-right">
-          <a class="tb-email" href="mailto:hello@cleanslatecollaborative.com"
+          <a class="tb-email" href="mailto:info@cleanslatecollaborative.com"
             ><svg viewBox="0 0 24 24">
               <path
                 d="M2 4h20v16H2V4zm2 2v.5l8 5 8-5V6H4zm16 3-8 5-8-5v9h16V9z"
               />
             </svg>
-            hello@cleanslatecollaborative.com</a
+            info@cleanslatecollaborative.com</a
           >
           <div class="tb-social">
             <a href="#" aria-label="Instagram"
@@ -1602,7 +1608,7 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
       <div class="mm-head">
-        <img src="assets/logo_white.png" alt="Clean Slate Collaborative" />
+        <img src="assets/logo_color.png" alt="Clean Slate Collaborative" />
         <button class="mm-close" id="mmClose">&times;</button>
       </div>
       <a href="#top">Home</a>
@@ -1616,7 +1622,7 @@
       >
       <a href="#contact">Contact</a>
       <a href="#founder">Kalen Ashley</a>
-      <a href="#contact" style="color: var(--gold-soft)"
+      <a href="#contact" style="color: var(--gold)"
         >Book a Consultation →</a
       >
     </div>
@@ -1711,7 +1717,7 @@
             </div>
           </div>
           <div class="founder-copy">
-            <span class="eyebrow reveal">My Why</span>
+            <!-- <span class="eyebrow reveal">My Why</span> -->
             <h2 class="s-title reveal">
               A journey rooted in
               <span class="accent">personal transformation.</span>
@@ -1749,8 +1755,8 @@
 
     <!-- ============ REDEFINING (navy statement) ============ -->
     <section class="redefine" id="approach">
-      <img src="assets/feather_white.png" class="feather-water" alt="" />
-      <img src="assets/feather_white.png" class="feather-water left" alt="" />
+      <img src="assets/feather_icon.png" class="feather-water" alt="" />
+      <img src="assets/feather_icon.png" class="feather-water left" alt="" />
       <div class="container">
         <span class="eyebrow center reveal">The Transformation</span>
         <h2 class="reveal">
@@ -1954,11 +1960,11 @@
 
     <!-- ============ FOOTER ============ -->
     <footer>
-      <img src="assets/feather_white.png" class="footer-water" alt="" />
+      <img src="assets/feather_icon.png" class="footer-water" alt="" />
       <div class="container">
         <div class="footer-top">
           <div class="footer-brand">
-            <img src="assets/logo_white.png" alt="Clean Slate Collaborative" />
+            <img src="assets/logo_color.png" alt="Clean Slate Collaborative" />
             <div class="fmini">Making space for what matters.</div>
             <p>
               Heart-led clutter clearing, intentional organizing, and Feng Shui

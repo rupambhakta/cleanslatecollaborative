@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="assets/site.css">
 <style>
 /* ===== BLOG LISTING ===== */
-.blog-hero{padding:74px 0 46px;text-align:center;background:linear-gradient(180deg,var(--cream),var(--cream-2));position:relative}
+.blog-hero{padding:74px 0 46px;text-align:center;background:var(--white);position:relative}
 .blog-hero .feather{width:38px;margin:0 auto 18px;opacity:.92}
 .blog-hero h1{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.04;margin:14px 0 20px}
 .blog-hero h1 .accent{color:var(--teal-deep);font-style:italic}
@@ -63,16 +63,16 @@
 .post-card.hide{display:none}
 
 /* Newsletter */
-.newsletter{background:var(--navy);border-radius:20px;padding:66px 60px;text-align:center;margin:82px 0 20px;position:relative;overflow:hidden}
-.newsletter .feather-water{position:absolute;right:-20px;top:50%;transform:translateY(-50%);height:135%;opacity:.06}
-.newsletter .eyebrow{justify-content:center;color:var(--gold-soft)}
-.newsletter .eyebrow::before,.newsletter .eyebrow::after{background:var(--gold-soft)}
-.newsletter h2{font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(1.9rem,3vw,2.6rem);margin:16px 0 14px;position:relative;z-index:2}
-.newsletter p{color:rgba(240,244,246,.82);max-width:520px;margin:0 auto 32px;position:relative;z-index:2;font-weight:300}
+.newsletter{background:linear-gradient(155deg,var(--cream-2),var(--sand));border-radius:20px;padding:66px 60px;text-align:center;margin:82px 0 20px;position:relative;overflow:hidden;border:1px solid rgba(22,48,63,.07);box-shadow:var(--shadow-sm)}
+.newsletter .feather-water{position:absolute;right:-20px;top:50%;transform:translateY(-50%);height:135%;opacity:.22}
+.newsletter .eyebrow{justify-content:center;color:var(--gold)}
+.newsletter .eyebrow::before,.newsletter .eyebrow::after{background:var(--gold)}
+.newsletter h2{font-family:var(--serif);font-weight:500;color:var(--navy);font-size:clamp(1.9rem,3vw,2.6rem);margin:16px 0 14px;position:relative;z-index:2}
+.newsletter p{color:var(--ink-soft);max-width:520px;margin:0 auto 32px;position:relative;z-index:2;font-weight:300}
 .nl-form{display:flex;gap:12px;max-width:520px;margin:0 auto;position:relative;z-index:2}
-.nl-form input{flex:1;font-family:var(--sans);font-size:.95rem;font-weight:300;padding:16px 24px;border-radius:40px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;outline:none;transition:.3s}
-.nl-form input::placeholder{color:rgba(255,255,255,.55)}
-.nl-form input:focus{border-color:var(--gold-soft);background:rgba(255,255,255,.14)}
+.nl-form input{flex:1;font-family:var(--sans);font-size:.95rem;font-weight:300;padding:16px 24px;border-radius:40px;border:1px solid rgba(22,48,63,.14);background:#fff;color:var(--navy);outline:none;transition:.3s}
+.nl-form input::placeholder{color:#a9b4bb}
+.nl-form input:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(46,147,166,.1)}
 
 /* Pagination */
 .pagination{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:64px}
@@ -137,7 +137,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mm-head">
-    <img src="assets/logo_white.png" alt="Clean Slate Collaborative">
+    <img src="assets/logo_color.png" alt="Clean Slate Collaborative">
     <button class="mm-close" id="mmClose">&times;</button>
   </div>
   <a href="index.html">Home</a>
@@ -148,7 +148,7 @@
   <a href="blog.html">Blog</a>
   <a href="index.html#contact">Contact</a>
   <a href="index.html#founder">Kalen Ashley</a>
-  <a href="index.html#contact" style="color:var(--gold-soft)">Book a Consultation →</a>
+  <a href="index.html#contact" style="color:var(--gold)">Book a Consultation →</a>
 </div>
 
 <!-- BLOG HEADER -->
@@ -268,7 +268,7 @@
 
     <!-- NEWSLETTER -->
     <section class="newsletter reveal">
-      <img src="assets/feather_white.png" class="feather-water" alt="">
+      <img src="assets/feather_icon.png" class="feather-water" alt="">
       <span class="eyebrow center">Stay Connected</span>
       <h2>Calm-home inspiration, in your inbox.</h2>
       <p>Join the Clean Slate list for seasonal tips, gentle decluttering prompts, and Feng Shui ideas — no clutter, promise.</p>
@@ -283,11 +283,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <img src="assets/feather_white.png" class="footer-water" alt="">
+  <img src="assets/feather_icon.png" class="footer-water" alt="">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo_white.png" alt="Clean Slate Collaborative">
+        <img src="assets/logo_color.png" alt="Clean Slate Collaborative">
         <div class="fmini">Making space for what matters.</div>
         <p>Heart-led clutter clearing, intentional organizing, and Feng Shui — helping families create homes that feel light, clear, and alive.</p>
         <div class="f-social">
@@ -323,7 +323,7 @@
           <li><a href="blog-details.html"><span class="fp-t">The Clean Slate Process: Where Transformation Begins</span><span class="fp-d">Feng Shui</span></a></li>
           <li><a href="blog-details.html"><span class="fp-t">5 Feng Shui Principles for a Calmer Room</span><span class="fp-d">Feng Shui</span></a></li>
           <li><a href="blog-details.html"><span class="fp-t">Downsizing with Heart</span><span class="fp-d">Downsizing</span></a></li>
-          <li><a href="blog.html"><span class="fp-t" style="color:var(--gold-soft)">View all posts →</span></a></li>
+          <li><a href="blog.html"><span class="fp-t" style="color:var(--gold)">View all posts →</span></a></li>
         </ul>
       </div>
       <div class="footer-col footer-contact">

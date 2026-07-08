@@ -12,7 +12,7 @@
 <style>
 /* ===== BLOG DETAILS ===== */
 .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));z-index:300;width:0}
-.article-head{padding:58px 0 8px;background:linear-gradient(180deg,var(--cream),var(--cream-2))}
+.article-head{padding:58px 0 8px;background:var(--white)}
 .breadcrumb{font-size:.8rem;letter-spacing:.04em;color:var(--steel);margin-bottom:26px;text-align:center}
 .breadcrumb a{transition:.3s}.breadcrumb a:hover{color:var(--teal-deep)}
 .breadcrumb .sep{margin:0 9px;opacity:.5}
@@ -53,14 +53,14 @@
 .share a:hover svg{fill:#fff}
 
 .author-box{max-width:756px;margin:54px auto 0;padding:0 34px}
-.author-inner{background:var(--navy);border-radius:16px;padding:38px;display:flex;gap:28px;align-items:center;position:relative;overflow:hidden}
+.author-inner{background:var(--white);border-radius:16px;padding:38px;display:flex;gap:28px;align-items:center;position:relative;overflow:hidden;border:1px solid rgba(22,48,63,.08);box-shadow:var(--shadow-sm)}
 .author-inner .aw{position:absolute;right:-20px;top:-20px;height:150px;opacity:.06}
-.author-inner img.ap{width:108px;height:108px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;border:3px solid rgba(216,190,134,.5);position:relative;z-index:2}
+.author-inner img.ap{width:108px;height:108px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;border:3px solid rgba(194,161,90,.5);position:relative;z-index:2}
 .author-inner .ab{position:relative;z-index:2}
-.author-inner .ab-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:6px}
-.author-inner h4{font-family:var(--serif);font-size:1.55rem;color:#fff;margin-bottom:10px;font-weight:600}
-.author-inner p{font-size:.95rem;color:var(--steel-soft);font-weight:300;margin-bottom:14px}
-.author-inner a{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);display:inline-flex;gap:8px}
+.author-inner .ab-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px}
+.author-inner h4{font-family:var(--serif);font-size:1.55rem;color:var(--navy);margin-bottom:10px;font-weight:600}
+.author-inner p{font-size:.95rem;color:var(--ink-soft);font-weight:300;margin-bottom:14px}
+.author-inner a{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;gap:8px}
 
 .prevnext{max-width:1080px;margin:56px auto 0;padding:0 34px;display:flex;justify-content:space-between;gap:24px}
 .prevnext a{display:flex;flex-direction:column;gap:6px;max-width:46%}
@@ -69,7 +69,7 @@
 .prevnext a:hover .pn-t{color:var(--teal-deep)}
 .prevnext .next{text-align:right;margin-left:auto;align-items:flex-end}
 
-.related{background:var(--cream-2);padding:82px 0;margin-top:82px}
+.related{background:var(--white);padding:82px 0;margin-top:82px;border-top:1px solid rgba(22,48,63,.07)}
 .related .rl-head{text-align:center;margin-bottom:52px}
 .related .rl-head h2{margin-top:14px}
 .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
@@ -145,7 +145,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mm-head">
-    <img src="assets/logo_white.png" alt="Clean Slate Collaborative">
+    <img src="assets/logo_color.png" alt="Clean Slate Collaborative">
     <button class="mm-close" id="mmClose">&times;</button>
   </div>
   <a href="index.html">Home</a>
@@ -156,7 +156,7 @@
   <a href="blog.html">Blog</a>
   <a href="index.html#contact">Contact</a>
   <a href="index.html#founder">Kalen Ashley</a>
-  <a href="index.html#contact" style="color:var(--gold-soft)">Book a Consultation →</a>
+  <a href="index.html#contact" style="color:var(--gold)">Book a Consultation →</a>
 </div>
 
 <!-- ARTICLE HEADER -->
@@ -233,7 +233,7 @@
 <!-- AUTHOR BIO -->
 <div class="author-box">
   <div class="author-inner">
-    <img src="assets/feather_white.png" class="aw" alt="">
+    <img src="assets/feather_icon.png" class="aw" alt="">
     <img class="ap" src="assets/founder.jpg" alt="Kalen Ashley">
     <div class="ab">
       <div class="ab-label">Written by</div>
@@ -282,11 +282,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <img src="assets/feather_white.png" class="footer-water" alt="">
+  <img src="assets/feather_icon.png" class="footer-water" alt="">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo_white.png" alt="Clean Slate Collaborative">
+        <img src="assets/logo_color.png" alt="Clean Slate Collaborative">
         <div class="fmini">Making space for what matters.</div>
         <p>Heart-led clutter clearing, intentional organizing, and Feng Shui — helping families create homes that feel light, clear, and alive.</p>
         <div class="f-social">
@@ -322,7 +322,7 @@
           <li><a href="blog-details.html"><span class="fp-t">The Clean Slate Process: Where Transformation Begins</span><span class="fp-d">Feng Shui</span></a></li>
           <li><a href="blog-details.html"><span class="fp-t">5 Feng Shui Principles for a Calmer Room</span><span class="fp-d">Feng Shui</span></a></li>
           <li><a href="blog-details.html"><span class="fp-t">Downsizing with Heart</span><span class="fp-d">Downsizing</span></a></li>
-          <li><a href="blog.html"><span class="fp-t" style="color:var(--gold-soft)">View all posts →</span></a></li>
+          <li><a href="blog.html"><span class="fp-t" style="color:var(--gold)">View all posts →</span></a></li>
         </ul>
       </div>
       <div class="footer-col footer-contact">
