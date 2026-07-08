@@ -460,11 +460,15 @@
       /* ============ HERO ============ */
       .hero {
         position: relative;
-        min-height: 90vh;
+        min-height: calc(100vh - 124px);
         display: flex;
         align-items: center;
         overflow: hidden;
         isolation: isolate;
+      }
+      .hero .container {
+        max-width: 1340px;
+        width: 100%;
       }
       .hero-bg {
         position: absolute;
@@ -494,41 +498,49 @@
         );
       }
       .hero-inner {
-        max-width: 660px;
-        padding: 60px 0;
+        max-width: 960px;
+        padding: 40px 0;
         color: var(--cream);
       }
       .hero .eyebrow {
         color: var(--gold-soft);
+        font-size: 14px;
+        letter-spacing: 0.34em;
       }
       .hero .eyebrow::before {
         background: var(--gold-soft);
+        width: 52px;
       }
       .hero h1 {
         font-family: var(--serif);
         font-weight: 500;
-        font-size: clamp(3rem, 6.4vw, 5.5rem);
-        line-height: 1.02;
+        font-size: clamp(3rem, 6vw, 6.2rem);
+        line-height: 1;
         letter-spacing: 0.01em;
-        margin: 26px 0 22px;
+        margin: 30px 0 28px;
         color: #fff;
       }
       .hero h1 em {
         font-style: italic;
         color: var(--gold-soft);
+        display: block;
       }
       .hero-sub {
-        font-size: 1.2rem;
+        font-size: clamp(1.1rem, 1.35vw, 1.4rem);
         font-weight: 300;
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 520px;
-        line-height: 1.7;
-        margin-bottom: 40px;
+        color: rgba(255, 255, 255, 0.92);
+        max-width: 680px;
+        line-height: 1.62;
+        margin-bottom: 48px;
       }
       .hero-cta {
         display: flex;
-        gap: 16px;
+        gap: 18px;
         flex-wrap: wrap;
+      }
+      .hero .btn {
+        padding: 20px 46px;
+        font-size: 13.5px;
       }
       .hero-scroll {
         position: absolute;
@@ -1526,9 +1538,6 @@
             <a href="#approach" class="btn btn-ghost">Explore the Approach</a>
           </div>
         </div>
-      </div>
-      <div class="hero-scroll">
-        <span>Scroll</span><span class="line"></span>
       </div>
     </header>
 
