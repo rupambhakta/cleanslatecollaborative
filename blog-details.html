@@ -27,7 +27,7 @@
 .feature-img{max-width:1080px;margin:46px auto 0;padding:0 34px}
 .feature-img img{width:100%;border-radius:16px;box-shadow:var(--shadow-lg);aspect-ratio:16/7.5;object-fit:cover}
 
-.article-body{max-width:756px;margin:0 auto;padding:66px 34px 10px;font-size:1.15rem;line-height:1.9;color:#3a4750;font-weight:300}
+.article-body{max-width:900px;margin:0 auto;padding:66px 34px 10px;font-size:1.15rem;line-height:1.9;color:#3a4750;font-weight:300}
 .article-body>p{margin-bottom:28px}
 .article-body>p.intro:first-letter{font-family:var(--serif);font-size:4.6rem;font-weight:600;float:left;line-height:.78;margin:6px 14px 0 0;color:var(--teal-deep)}
 .article-body h2{font-family:var(--serif);font-weight:600;font-size:2rem;color:var(--navy);line-height:1.15;margin:50px 0 20px}
@@ -52,16 +52,6 @@
 .share a:hover{background:var(--navy);transform:translateY(-3px)}
 .share a:hover svg{fill:#fff}
 
-.author-box{max-width:756px;margin:54px auto 0;padding:0 34px}
-.author-inner{background:var(--white);border-radius:16px;padding:38px;display:flex;gap:28px;align-items:center;position:relative;overflow:hidden;border:1px solid rgba(22,48,63,.08);box-shadow:var(--shadow-sm)}
-.author-inner .aw{position:absolute;right:-20px;top:-20px;height:150px;opacity:.06}
-.author-inner img.ap{width:108px;height:108px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;border:3px solid rgba(194,161,90,.5);position:relative;z-index:2}
-.author-inner .ab{position:relative;z-index:2}
-.author-inner .ab-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px}
-.author-inner h4{font-family:var(--serif);font-size:1.55rem;color:var(--navy);margin-bottom:10px;font-weight:600}
-.author-inner p{font-size:.95rem;color:var(--ink-soft);font-weight:300;margin-bottom:14px}
-.author-inner a{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;gap:8px}
-
 .prevnext{max-width:1080px;margin:56px auto 0;padding:0 34px;display:flex;justify-content:space-between;gap:24px}
 .prevnext a{display:flex;flex-direction:column;gap:6px;max-width:46%}
 .prevnext .pn-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:600}
@@ -85,7 +75,6 @@
 .rel-card:hover h3{color:var(--teal-deep)}
 
 @media(max-width:760px){
-  .author-inner{flex-direction:column;text-align:center}
   .rel-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}
   .prevnext{flex-direction:column}.prevnext a{max-width:100%}.prevnext .next{text-align:left;align-items:flex-start}
 }
@@ -230,20 +219,6 @@
   </div>
 </article>
 
-<!-- AUTHOR BIO -->
-<div class="author-box">
-  <div class="author-inner">
-    <img src="assets/feather_icon.png" class="aw" alt="">
-    <img class="ap" src="assets/founder.jpg" alt="Kalen Ashley">
-    <div class="ab">
-      <div class="ab-label">Written by</div>
-      <h4>Kalen Ashley</h4>
-      <p>Founder of Clean Slate Collaborative. Certified in Clutter Clearing, Feng Shui, Reiki, and Life Mastery Coaching, Kalen helps families turn heavy, chaotic homes into spaces that feel light, clear, and alive.</p>
-      <a href="index.html#founder">More about Kalen <span>→</span></a>
-    </div>
-  </div>
-</div>
-
 <!-- PREV / NEXT -->
 <nav class="prevnext">
   <a href="blog-details.html" class="prev">
@@ -261,7 +236,7 @@
   <div class="container">
     <div class="rl-head">
       <span class="eyebrow center reveal">Keep Reading</span>
-      <h2 class="s-title reveal">More from the blog</h2>
+      <!-- <h2 class="s-title reveal">More from the blog</h2> -->
     </div>
     <div class="rel-grid">
       <a href="blog-details.html" class="rel-card reveal">
