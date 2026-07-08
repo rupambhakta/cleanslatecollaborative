@@ -1279,6 +1279,11 @@
         font-size: 1.02rem;
         color: var(--navy);
         font-weight: 400;
+        overflow-wrap: anywhere;
+      }
+      /* let the flex text column shrink so the email can wrap on narrow phones */
+      .info-item > div:not(.ic) {
+        min-width: 0;
       }
       .form-card {
         background: #fff;
@@ -1610,6 +1615,10 @@
       @media (max-width: 560px) {
         .container {
           padding: 0 22px;
+        }
+        /* keep the testimonial chip inside the viewport on narrow phones */
+        .founder-photo .quote-chip {
+          right: 6px;
         }
         .form-row {
           grid-template-columns: 1fr;
