@@ -85,6 +85,13 @@ a{text-decoration:none;color:inherit}
 .dropdown a:hover{background:var(--cream-2);color:var(--teal-deep);padding-left:20px}
 .dropdown a:hover .di{background:var(--teal);opacity:1}
 .dd-title{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);padding:6px 16px 10px;font-weight:600}
+.dropdown .dd-sub{position:relative}
+.dropdown .dd-sub>a .rcaret{margin-left:auto;width:6px;height:6px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(-45deg);opacity:.7;transition:.25s}
+.dropdown .dd-sub:hover>a{background:var(--cream-2);color:var(--teal-deep)}
+.dropdown .dd-sub:hover>a .rcaret{border-color:var(--teal);opacity:1}
+.dropdown .dd-sub:hover>a .di{background:var(--teal);opacity:1}
+.dd-flyout{position:absolute;top:-12px;left:100%;min-width:188px;background:#fff;border-radius:10px;box-shadow:var(--shadow-md);border:1px solid rgba(22,48,63,.06);padding:12px;opacity:0;visibility:hidden;transform:translateX(8px);transition:.26s var(--ease);z-index:5}
+.dropdown .dd-sub:hover>.dd-flyout{opacity:1;visibility:visible;transform:translateX(0)}
 .nav-right{display:flex;align-items:center;gap:20px}
 .nav-login{font-family:var(--sans);font-weight:500;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:8px;transition:.3s}
 .nav-login svg{width:16px;height:16px;fill:none;stroke:var(--steel);stroke-width:1.6}
