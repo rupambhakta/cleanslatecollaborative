@@ -158,3 +158,18 @@ footer{background:var(--white);color:var(--ink-soft);padding:82px 0 0;position:r
   .footer-bottom{flex-direction:column;text-align:center}
 }
 @media(max-width:560px){.footer-top{grid-template-columns:1fr}}
+
+/* Before & After (service pages) */
+.k-ba .pairs{display:grid;gap:36px;max-width:1000px;margin:0 auto}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ba-item{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);background:#fff}
+.ba-item>img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.ba-item:hover>img{transform:scale(1.05)}
+.ba-badge{position:absolute;top:16px;left:16px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 15px;border-radius:30px;z-index:2}
+.ba-badge.before{background:rgba(22,48,63,.82);color:#fff;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.ba-badge.after{background:var(--gold);color:var(--navy)}
+.ba-dummy{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--cream-2),var(--sand));color:var(--steel);text-align:center;padding:20px}
+.ba-dummy svg{width:36px;height:36px;stroke:var(--steel);fill:none;stroke-width:1.4;opacity:.75}
+.ba-dummy span{font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+.ba-dummy small{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-soft)}
+@media(max-width:640px){.ba-pair{grid-template-columns:1fr;gap:14px}}
